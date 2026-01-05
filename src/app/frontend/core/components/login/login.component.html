@@ -2,12 +2,12 @@
   <div style="max-width: 800px; width: 100%;">
     <h2 class="text-center mb-4 fw-bold mt-5">Login</h2>
 
-    <form [formGroup]="registerForm" (ngSubmit)="login()" class="row g-3">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="row g-3">
 
         
         <!-- Contact Info -->
         <div class="col-12">
-          @let emailControl = registerForm.get('email');
+          @let emailControl = loginForm.get('email');
           <label class="form-label fw-semibold">Email Address</label>
           <input formControlName="email" type="email" class="form-control" placeholder="Enter email address">
           @if(emailControl?.errors && emailControl?.touched){
@@ -22,7 +22,7 @@
 
         <!-- Password Fields -->
         <div class="col-12">
-          @let passwordControl = registerForm.get('password');
+          @let passwordControl = loginForm.get('password');
           <label class="form-label fw-semibold">Password</label>
           <input formControlName="password" type="password" class="form-control" placeholder="Enter password">
           @if(passwordControl?.errors && passwordControl?.touched){
